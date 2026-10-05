@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#12181f" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f1f2ed" media="(prefers-color-scheme: light)">
 <title>Le mie app</title>
-<!-- Pagina iniziale del sito: va nella cartella principale del repository GitHub, accanto alle 4 cartelle.
-     Se una cartella su GitHub ha un nome diverso, cambia solo il valore "dir" qui sotto in APPS. -->
+<!-- Pagina iniziale: va nel repository speciale <nomeutente>.github.io, così si apre su https://<nomeutente>.github.io/.
+     Ogni "dir" in APPS è il nome di un repository (maiuscole e minuscole contano). -->
 <style>
   :root{--bg:#12181f;--card:rgba(27,35,44,.62);--edge:rgba(255,255,255,.07);--ink:#f1f5f4;--soft:#9fb0ab;color-scheme:dark;}
   @media (prefers-color-scheme: light){:root{--bg:#f1f2ed;--card:rgba(255,255,255,.78);--edge:rgba(20,24,26,.08);--ink:#14181a;--soft:#4b5450;color-scheme:light;}}
@@ -39,9 +39,9 @@
 <script>
   const APPS = [
     { dir: 'money_tracker', icon: 'icons/icon-192.png', name: 'Bilancio', text: 'Conti, spese, ricorrenti e prestiti' },
-    { dir: 'noi_due', icon: 'icons/icon-192.png', name: 'Noi Due', text: 'Spese di coppia e liste della spesa' },
+    { dir: 'Noi_due', icon: 'icons/icon-192.png', name: 'Noi Due', text: 'Spese di coppia e liste della spesa' },
     { dir: 'gym_tracker', icon: 'gym-icon-192.png', name: 'RecompApp', text: 'Allenamento, nutrizione e peso' },
-    { dir: 'style_app', icon: 'icon-192.png', name: 'Style', text: 'Wishlist, acquisti e guardaroba' },
+    { dir: 'Style_app', icon: 'icon-192.png', name: 'Style', text: 'Wishlist, acquisti e guardaroba' },
   ];
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
   document.getElementById('apps').innerHTML = APPS.map((a) => `<a class="app" href="./${esc(a.dir)}/"><img src="./${esc(a.dir)}/${esc(a.icon)}" alt="" onerror="this.style.visibility='hidden'"><strong>${esc(a.name)}</strong><span>${esc(a.text)}</span></a>`).join('');
